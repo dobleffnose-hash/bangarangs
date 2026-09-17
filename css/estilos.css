@@ -213,7 +213,7 @@ main > section > h2 { text-align: center; margin-bottom: 1.5rem; }
   position: sticky; top: .5rem; justify-self: end; z-index: 2;
   width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--gris-2); background: var(--fondo); font-size: 1.4rem; font-weight: 300; line-height: 1;
 }
-.galeria > img { aspect-ratio: 3 / 4; object-fit: cover; width: 100%; background: var(--fondo-2); }
+.galeria > img { aspect-ratio: 3 / 4; object-fit: contain; width: 100%; background: var(--fondo-2); }
 .galeria-pie { color: var(--gris-2); margin: .5rem 0; }
 .miniaturas { display: flex; gap: .5rem; overflow-x: auto; padding-bottom: .25rem; }
 .miniaturas button { flex: 0 0 64px; padding: 0; border: 1px solid transparent; background: var(--fondo-2); }
