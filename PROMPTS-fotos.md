@@ -44,6 +44,18 @@ Siempre la misma modelo, el mismo fondo y la misma luz en todas: eso es lo que h
 | `ia-3.webp` | Plano cerrado del torso, del cuello a la cadera, para ver la textura del tejido y las franjas. Formato vertical 3:4. |
 | `portada.webp` | Plano horizontal amplio, formato 16:9, la modelo parada en el tercio derecho de la imagen, cuerpo entero, con espacio vacío del fondo a la izquierda para poner texto. Lleva el conjunto Musculosa Terracota + Bolero Verde abierto. |
 
+## Fotos reales limpias (`real-frente`, `real-espalda`, `real-etiqueta`)
+
+Las fotos que sacaste sobre el mármol sirven como base. Acá la IA **no tiene que cambiar la prenda**, solo el entorno; así siguen siendo fotos reales. Subí la foto y pegá:
+
+> Editá esta foto de producto. Conservá la prenda exactamente como está, sin cambiar colores, rayas, botones, textura ni proporciones. Reemplazá el fondo de mármol por un fondo blanco liso de estudio. Enderezá la imagen para que la prenda quede vertical y centrada, con los breteles hacia arriba. Luz pareja y suave, sin la sombra del celular ni de la persona. Sacá la etiqueta de papel blanca y el hilo, pero dejá la etiqueta negra de cartón con el nombre de la marca donde está. Formato vertical 3:4, foto realista tipo tienda online.
+
+- `real-frente.webp`: la foto donde se ve la etiqueta cosida de la marca en el cuello.
+- `real-espalda.webp`: la foto del otro lado (sin la etiqueta cosida).
+- `real-etiqueta.webp`: a la etiqueta de cartón sacale una foto aparte, de cerca, con la prenda de fondo. Prompt: "Conservá la etiqueta y la prenda tal cual; reemplazá el fondo por blanco liso, luz pareja, enderezá y centrá. Formato vertical 3:4."
+
+Control: compará lado a lado con la foto original. Si la IA "arregló" una raya, movió un botón o cambió un tono, descartala y volvé a generar. Las rayas finas y la cantidad de botones son lo primero que suele inventar.
+
 ## Control de calidad (antes de subir cada imagen)
 
 Compará con la prenda real y descartá si falla cualquiera de estos:
