@@ -3,16 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Archivio · Twinset Milano original, nuevo con etiqueta</title>
-  <meta name="description" content="Musculosas tejidas y boleros cortos Twinset Milano de archivo, nuevos con etiqueta. Piezas Y2K originales, envíos a toda la Argentina, consultas por WhatsApp.">
+  <title>Archivio · Musculosas y boleros Twinset Milano originales</title>
+  <meta name="description" content="Musculosas tejidas y boleros cortos, prendas originales Twinset Milano de archivo, nuevas con etiqueta. Envíos a toda la Argentina, consultas por WhatsApp.">
   <meta name="theme-color" content="#2F3A22">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Archivio · Twinset Milano original, nuevo con etiqueta">
+  <meta property="og:title" content="Archivio · Musculosas y boleros Twinset Milano originales">
   <meta property="og:description" content="Musculosas tejidas y boleros cortos de archivo, nuevos con etiqueta. Envíos a toda la Argentina.">
-  <!-- og:image tiene que ser una URL completa cuando el sitio esté publicado, p. ej. https://USUARIO.github.io/archivio/img/og.jpg -->
-  <meta property="og:image" content="img/og.jpg">
+  <!-- Al publicar, reemplazá USUARIO por tu usuario de GitHub (o poné el dominio propio) en estas tres líneas. -->
+  <link rel="canonical" href="https://USUARIO.github.io/archivio/">
+  <meta property="og:url" content="https://USUARIO.github.io/archivio/">
+  <meta property="og:image" content="https://USUARIO.github.io/archivio/img/og.jpg">
   <meta property="og:locale" content="es_AR">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -25,11 +27,12 @@
 
 <a class="saltar" href="#catalogo">Ir al catálogo</a>
 
-<div class="anuncios" aria-label="Avisos">
+<div class="anuncios" role="region" aria-label="Avisos">
   <div class="anuncios-pista">
     <span>Twinset Milano original</span><span>Nuevo con etiqueta</span><span>Envíos a todo el país</span><span>Consultas por WhatsApp</span>
     <span aria-hidden="true">Twinset Milano original</span><span aria-hidden="true">Nuevo con etiqueta</span><span aria-hidden="true">Envíos a todo el país</span><span aria-hidden="true">Consultas por WhatsApp</span>
   </div>
+  <button type="button" class="anuncios-pausa" aria-pressed="false">Pausar</button>
 </div>
 
 <header class="cabecera">
@@ -49,8 +52,8 @@
   <section class="portada">
     <img src="img/portada.webp" alt="Modelo con musculosa tejida y bolero corto Twinset Milano, imagen ilustrativa generada con inteligencia artificial" fetchpriority="high" onerror="this.remove()">
     <div class="portada-texto">
-      <h1>Tejidos italianos de <em>archivio</em>, nuevos con etiqueta</h1>
-      <p>Musculosas y boleros Twinset Milano, piezas de los 2000 que nunca se usaron.</p>
+      <h1>Musculosas y boleros Twinset Milano de <em>archivio</em>, nuevos con etiqueta</h1>
+      <p>Tejidos italianos de los 2000 que nunca se usaron. Elegís, escribís por WhatsApp y te lo enviamos.</p>
       <a class="btn btn-claro" href="#catalogo">Ver catálogo</a>
     </div>
   </section>
@@ -59,7 +62,7 @@
     <!-- lo arma app.js -->
   </section>
 
-  <section class="catalogo" id="catalogo" aria-labelledby="catalogo-titulo">
+  <section class="catalogo" id="catalogo" tabindex="-1" aria-labelledby="catalogo-titulo">
     <h2 id="catalogo-titulo">Catálogo</h2>
     <div class="filtros">
       <div class="filtro" role="group" aria-label="Tipo de prenda">

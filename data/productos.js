@@ -14,8 +14,7 @@ const PRODUCTOS = [
     "stock": { "S": 7, "M": 16, "L": 8 },
     "medidas": { "S": "Ancho __ cm / Largo __ cm", "M": "Ancho __ cm / Largo __ cm", "L": "Ancho __ cm / Largo __ cm" },
     "composicion": "A completar",
-    "combina_con": ["bolero-verde", "conj-terracota-verde"],
-    "destacado": true
+    "combina_con": ["bolero-verde", "conj-terracota-verde"]
   },
   {
     // PENDIENTE DE CONFIRMAR: en el conteo figura como "VERDE / BEIGE / LILA".
@@ -29,8 +28,7 @@ const PRODUCTOS = [
     "stock": { "S": 7, "M": 16, "L": 8 },
     "medidas": { "S": "Ancho __ cm / Largo __ cm", "M": "Ancho __ cm / Largo __ cm", "L": "Ancho __ cm / Largo __ cm" },
     "composicion": "A completar",
-    "combina_con": ["bolero-verde", "conj-lima-verde"],
-    "destacado": true
+    "combina_con": ["bolero-verde", "conj-lima-verde"]
   },
   {
     "id": "musc-lila",
@@ -42,8 +40,7 @@ const PRODUCTOS = [
     "stock": { "S": 6, "M": 14, "L": 2 },
     "medidas": { "S": "Ancho __ cm / Largo __ cm", "M": "Ancho __ cm / Largo __ cm", "L": "Ancho __ cm / Largo __ cm" },
     "composicion": "A completar",
-    "combina_con": ["bolero-beige", "conj-lila-beige"],
-    "destacado": false
+    "combina_con": ["bolero-beige", "conj-lila-beige"]
   },
   {
     "id": "bolero-verde",
@@ -55,8 +52,7 @@ const PRODUCTOS = [
     "stock": { "S": 23, "M": 57, "L": 16 },
     "medidas": { "S": "Ancho __ cm / Largo __ cm / Manga __ cm", "M": "Ancho __ cm / Largo __ cm / Manga __ cm", "L": "Ancho __ cm / Largo __ cm / Manga __ cm" },
     "composicion": "A completar",
-    "combina_con": ["musc-terracota", "musc-lima", "promo-verde"],
-    "destacado": true
+    "combina_con": ["musc-terracota", "musc-lima", "promo-verde"]
   },
   {
     "id": "bolero-beige",
@@ -68,43 +64,39 @@ const PRODUCTOS = [
     "stock": { "S": 2, "M": 14, "L": 3 },
     "medidas": { "S": "Ancho __ cm / Largo __ cm / Manga __ cm", "M": "Ancho __ cm / Largo __ cm / Manga __ cm", "L": "Ancho __ cm / Largo __ cm / Manga __ cm" },
     "composicion": "A completar",
-    "combina_con": ["musc-lila", "conj-lila-beige"],
-    "destacado": false
+    "combina_con": ["musc-lila", "conj-lila-beige"]
   },
 
   // Conjuntos: el stock por talle se calcula solo, como el mínimo entre las dos prendas.
   {
     "id": "conj-terracota-verde",
-    "nombre": "Conjunto Terracota + Bolero Verde",
+    "nombre": "Musculosa Terracota + Bolero Verde",
     "tipo": "conjunto",
     "color": "#3E4A2E",
     "descripcion": "Musculosa tejida Terracota con el bolero corto verde encima. El outfit completo, en el mismo talle.",
     "precio": 70000,
     "prendas": ["musc-terracota", "bolero-verde"],
-    "combina_con": [],
-    "destacado": true
+    "combina_con": []
   },
   {
     "id": "conj-lima-verde",
-    "nombre": "Conjunto Oliva y Lima + Bolero Verde",
+    "nombre": "Musculosa Oliva y Lima + Bolero Verde",
     "tipo": "conjunto",
     "color": "#556B2F",
     "descripcion": "Musculosa tejida Oliva y Lima con el bolero corto verde encima. Tono sobre tono.",
     "precio": 70000,
     "prendas": ["musc-lima", "bolero-verde"],
-    "combina_con": [],
-    "destacado": true
+    "combina_con": []
   },
   {
     "id": "conj-lila-beige",
-    "nombre": "Conjunto Lila + Bolero Beige",
+    "nombre": "Musculosa Lila + Bolero Beige",
     "tipo": "conjunto",
     "color": "#D8CFC0",
     "descripcion": "Musculosa tejida Lila con el bolero corto beige encima. La combinación más clara.",
     "precio": 70000,
     "prendas": ["musc-lila", "bolero-beige"],
-    "combina_con": [],
-    "destacado": false
+    "combina_con": []
   },
 
   // Promo destacada: se elige una de las musculosas de "opciones" en el talle de la clienta,
@@ -119,7 +111,6 @@ const PRODUCTOS = [
     "opciones": ["musc-terracota", "musc-lima"],
     "prendas": ["bolero-verde"],
     "talle_fijo": { "bolero-verde": "M" },
-    "combina_con": [],
-    "destacado": true
+    "combina_con": []
   }
 ];

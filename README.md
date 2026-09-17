@@ -112,7 +112,7 @@ y entrá a `http://localhost:8000`.
 
 Cada vez que subís un cambio a `main`, el sitio se actualiza solo en un minuto.
 
-Una vez publicado, abrí `index.html` y cambiá la línea `og:image` por la URL completa (`https://USUARIO.github.io/archivio/img/og.jpg`): WhatsApp e Instagram solo muestran la imagen de vista previa si la dirección es completa.
+Una vez publicado, abrí `index.html` y reemplazá `USUARIO` en las tres líneas marcadas del `<head>` (`canonical`, `og:url` y `og:image`) por tu usuario de GitHub, o por el dominio propio si lo tenés. WhatsApp e Instagram solo muestran la imagen de vista previa si la dirección es completa.
 
 ### Dominio propio (opcional)
 
@@ -124,6 +124,7 @@ Una vez publicado, abrí `index.html` y cambiá la línea `og:image` por la URL 
 ## Checklist antes de lanzar
 
 - [ ] `WHATSAPP` en `js/config.js` con el número real.
+- [ ] `USUARIO` reemplazado en las tres líneas del `<head>` de `index.html`.
 - [ ] Fotos en todas las carpetas de `img/productos/`.
 - [ ] `img/portada.webp` (horizontal, con espacio libre a la izquierda para el titular).
 - [ ] `img/og.jpg` con una foto real.
