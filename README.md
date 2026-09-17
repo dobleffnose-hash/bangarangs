@@ -46,10 +46,6 @@ DESCUENTO_TRANSFERENCIA: 0.10,
 
 El título de la pestaña y los textos de Open Graph están en las primeras líneas de `index.html`; si cambiás el nombre de la tienda, actualizalos ahí también.
 
-### Renombrar la musculosa "Oliva y Lima"
-
-Quedó pendiente confirmar esa prenda (en el conteo figura como "VERDE / BEIGE / LILA"). En `data/productos.js` está marcada con un comentario: cambiá `nombre`, `descripcion` y `color`, y si hace falta el nombre del conjunto `conj-lima-verde`.
-
 ### Completar medidas y composición
 
 En cada prenda de `data/productos.js`, reemplazá los `__` de `medidas` y el texto `"A completar"` de `composicion`.
@@ -129,4 +125,3 @@ Una vez publicado, abrí `index.html` y reemplazá `USUARIO` en las tres líneas
 - [ ] `img/portada.webp` (horizontal, con espacio libre a la izquierda para el titular).
 - [ ] `img/og.jpg` con una foto real.
 - [ ] Medidas y composición completas.
-- [ ] Nombre de la musculosa "Oliva y Lima" confirmado.

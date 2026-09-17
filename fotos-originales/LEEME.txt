@@ -1,0 +1,3 @@
+Copiá acá las fotos originales de las prendas (jpg/png/heic), con cualquier nombre.
+Después las identifico, las recorto y las convierto a img/productos/{id}/real-*.webp.
+Esta carpeta no se publica.
