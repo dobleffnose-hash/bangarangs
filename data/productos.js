@@ -9,7 +9,7 @@ const PRODUCTOS = [
     "nombre": "Musculosa tejida Terracota",
     "tipo": "musculosa",
     "color": "#3E4A2E",
-    "descripcion": "Musculosa tejida de punto liviano: cuerpo verde oliva oscuro, franja terracota con una línea fina y ruedo a rayas crema y oliva. Breteles finos regulables con herrajes de metal. Pieza de archivo de los 2000, nueva con etiqueta.",
+    "descripcion": "Musculosa tejida de punto liviano: cuerpo verde oliva oscuro, franja terracota con una línea fina y ruedo a rayas crema y oliva. Breteles finos regulables con herrajes de metal. Nueva con etiqueta.",
     "precio": 38000,
     "stock": { "S": 7, "M": 16, "L": 8 },
     "medidas": { "S": "Ancho __ cm / Largo __ cm", "M": "Ancho __ cm / Largo __ cm", "L": "Ancho __ cm / Largo __ cm" },

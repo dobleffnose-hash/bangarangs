@@ -267,7 +267,15 @@ dialogo.addEventListener('close', () => {
 
 document.title = document.title.replace('Bangarangs', CONFIG.NOMBRE_TIENDA);
 document.querySelectorAll('[data-tienda]').forEach(n => n.textContent = CONFIG.NOMBRE_TIENDA);
-document.querySelectorAll('[data-wa-generico]').forEach(a => a.href = wa('Hola! Tengo una consulta sobre las prendas Twinset.'));
+// Botón genérico: si hay un producto abierto, el mensaje lo nombra.
+function mensajeGenerico() {
+  const abierto = dialogo.open && porId[$('.detalle-caja', dialogo)?.dataset.id];
+  return abierto ? `Hola! Estoy viendo la ${abierto.nombre} en ${CONFIG.NOMBRE_TIENDA} y tengo una consulta.` : `Hola! Vi el catálogo de ${CONFIG.NOMBRE_TIENDA} y tengo una consulta.`;
+}
+document.querySelectorAll('[data-wa-generico]').forEach(a => {
+  a.href = wa(mensajeGenerico());
+  a.onclick = () => { a.href = wa(mensajeGenerico()); };
+});
 if (CONFIG.INSTAGRAM) document.querySelectorAll('[data-instagram]').forEach(a => { a.href = 'https://instagram.com/' + CONFIG.INSTAGRAM; a.hidden = false; });
 
 $('.anuncios-pausa').onclick = e => {
