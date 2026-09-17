@@ -83,20 +83,15 @@ s { text-decoration-thickness: 1px; }
 .wa-icono { display: inline-flex; padding: .3em !important; color: var(--tinta); }
 
 /* ---------- portada ---------- */
-/* Celular: imagen vertical propia (4:5) y titular abajo sobre un degradé. Escritorio: imagen 16:9 y titular centrado. */
-.portada { position: relative; display: grid; aspect-ratio: 4 / 5; background: var(--fondo-2); color: var(--tinta); overflow: hidden; }
-.portada picture, .portada img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.portada-texto {
-  position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; text-align: center;
-  padding: 2rem var(--gutter) 2.25rem;
-}
-/* con foto: texto blanco sobre un velo oscuro suave para que se lea sobre cualquier zona de la imagen */
-.portada:has(img) { color: #fff; --foco: #fff; }
-.portada:has(img) .portada-texto { background: linear-gradient(to top, rgba(0, 0, 0, .62), rgba(0, 0, 0, .28) 45%, rgba(0, 0, 0, 0) 80%); text-shadow: 0 1px 12px rgba(0, 0, 0, .45); }
-.portada h1 { display: flex; flex-direction: column; gap: .5em; margin-bottom: .5em; letter-spacing: 0; }
-.portada-kicker { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; }
-.portada-grande { font-size: clamp(2.4rem, 11vw, 7rem); line-height: .95; font-weight: 500; text-transform: uppercase; letter-spacing: .02em; }
-.portada p { max-width: 40ch; margin-bottom: 1.25rem; font-weight: 400; font-size: .95rem; }
+/* La foto va limpia, sin texto encima. El titular va debajo, sobre blanco, en tipografía liviana (patrón COS / Arket). */
+.portada { background: var(--fondo); color: var(--tinta); }
+.portada picture { display: block; background: var(--fondo-2); }
+.portada img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; }
+.portada-texto { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 2.5rem var(--gutter) 3rem; }
+.portada h1 { display: flex; flex-direction: column; gap: .9em; margin-bottom: .6em; letter-spacing: 0; }
+.portada-kicker { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; color: var(--gris); }
+.portada-grande { font-size: clamp(2rem, 7vw, 4.6rem); line-height: 1.05; font-weight: 300; letter-spacing: -.02em; max-width: 16ch; }
+.portada p { max-width: 46ch; margin-bottom: 1.5rem; color: var(--gris); }
 
 /* ---------- botones ---------- */
 .btn {
@@ -105,8 +100,6 @@ s { text-decoration-thickness: 1px; }
   background: var(--negro); color: #fff; text-decoration: none;
 }
 .btn:hover { background: #fff; color: var(--negro); }
-.portada:has(img) .btn { background: #fff; color: var(--negro); border-color: #fff; text-shadow: none; }
-.portada:has(img) .btn:hover { background: var(--negro); color: #fff; border-color: var(--negro); }
 .enlace { background: none; border: 0; padding: 0; text-align: left; color: inherit; text-decoration: underline; text-underline-offset: .25em; text-decoration-color: var(--gris-2); }
 .enlace:hover { text-decoration-color: currentColor; }
 
@@ -253,11 +246,8 @@ main > section > h2 { text-align: center; margin-bottom: 1.5rem; }
   .detalle-caja { grid-template-columns: 1fr 1fr; padding: 1.5rem 2.5rem 2.5rem; }
   .cerrar { position: absolute; right: 1rem; top: 1rem; }
   .galeria { position: sticky; top: 0; align-self: start; }
-  .portada { aspect-ratio: auto; height: clamp(520px, 52vw, 88vh); }
-  .portada-texto { justify-content: center; padding: 3rem var(--gutter); }
-  .portada:has(img) .portada-texto { background: rgba(0, 0, 0, .22); }
-  .portada-grande { font-size: clamp(3.5rem, 8vw, 8rem); }
-  .portada p { font-size: 1.05rem; }
+  .portada img { aspect-ratio: 16 / 9; max-height: 82vh; }
+  .portada-texto { padding: 3.5rem var(--gutter) 4rem; }
 }
 @media (min-width: 1100px) {
   .grilla { grid-template-columns: repeat(4, 1fr); }
