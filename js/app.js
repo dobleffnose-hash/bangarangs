@@ -278,12 +278,6 @@ document.querySelectorAll('[data-wa-generico]').forEach(a => {
 });
 if (CONFIG.INSTAGRAM) document.querySelectorAll('[data-instagram]').forEach(a => { a.href = 'https://instagram.com/' + CONFIG.INSTAGRAM; a.hidden = false; });
 
-$('.anuncios-pausa').onclick = e => {
-  const pausado = e.currentTarget.parentNode.classList.toggle('pausado');
-  e.currentTarget.setAttribute('aria-pressed', pausado);
-  e.currentTarget.textContent = pausado ? 'Reanudar' : 'Pausar';
-};
-
 renderPromo();
 renderCatalogo();
 $('#grilla-conjuntos').replaceChildren(...PRODUCTOS.filter(p => p.tipo === 'conjunto').map(tarjeta));
