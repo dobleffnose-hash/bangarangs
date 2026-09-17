@@ -83,23 +83,20 @@ s { text-decoration-thickness: 1px; }
 .wa-icono { display: inline-flex; padding: .3em !important; color: var(--tinta); }
 
 /* ---------- portada ---------- */
-.portada {
-  position: relative; display: grid; min-height: 70vh; background: var(--fondo-2); color: var(--tinta); overflow: hidden;
-}
-.portada img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+/* Celular: imagen vertical propia (4:5) y titular abajo sobre un degradé. Escritorio: imagen 16:9 y titular centrado. */
+.portada { position: relative; display: grid; aspect-ratio: 4 / 5; background: var(--fondo-2); color: var(--tinta); overflow: hidden; }
+.portada picture, .portada img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .portada-texto {
-  position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-  padding: 2.5rem var(--gutter);
+  position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; text-align: center;
+  padding: 2rem var(--gutter) 2.25rem;
 }
-/* con foto: titular blanco superpuesto a las modelos, como en los banners de moda */
+/* con foto: texto blanco sobre un velo oscuro suave para que se lea sobre cualquier zona de la imagen */
 .portada:has(img) { color: #fff; --foco: #fff; }
-.portada:has(img) .portada-texto { text-shadow: 0 2px 28px rgba(0, 0, 0, .35); }
-.portada h1 {
-  text-transform: uppercase; font-weight: 500; letter-spacing: .06em; line-height: 1.02;
-  font-size: clamp(2.1rem, 7.5vw, 6rem); max-width: 14ch; margin-bottom: .4em;
-}
-.portada h1 em { font-family: inherit; font-style: normal; font-weight: 300; }
-.portada p { max-width: 44ch; margin-bottom: 1.5rem; font-weight: 400; }
+.portada:has(img) .portada-texto { background: linear-gradient(to top, rgba(0, 0, 0, .62), rgba(0, 0, 0, .28) 45%, rgba(0, 0, 0, 0) 80%); text-shadow: 0 1px 12px rgba(0, 0, 0, .45); }
+.portada h1 { display: flex; flex-direction: column; gap: .5em; margin-bottom: .5em; letter-spacing: 0; }
+.portada-kicker { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; }
+.portada-grande { font-size: clamp(2.4rem, 11vw, 7rem); line-height: .95; font-weight: 500; text-transform: uppercase; letter-spacing: .02em; }
+.portada p { max-width: 40ch; margin-bottom: 1.25rem; font-weight: 400; font-size: .95rem; }
 
 /* ---------- botones ---------- */
 .btn {
@@ -256,7 +253,11 @@ main > section > h2 { text-align: center; margin-bottom: 1.5rem; }
   .detalle-caja { grid-template-columns: 1fr 1fr; padding: 1.5rem 2.5rem 2.5rem; }
   .cerrar { position: absolute; right: 1rem; top: 1rem; }
   .galeria { position: sticky; top: 0; align-self: start; }
-  .portada { min-height: 0; aspect-ratio: 16 / 9; max-height: 88vh; }
+  .portada { aspect-ratio: auto; height: clamp(520px, 52vw, 88vh); }
+  .portada-texto { justify-content: center; padding: 3rem var(--gutter); }
+  .portada:has(img) .portada-texto { background: rgba(0, 0, 0, .22); }
+  .portada-grande { font-size: clamp(3.5rem, 8vw, 8rem); }
+  .portada p { font-size: 1.05rem; }
 }
 @media (min-width: 1100px) {
   .grilla { grid-template-columns: repeat(4, 1fr); }
