@@ -278,6 +278,10 @@ document.querySelectorAll('[data-wa-generico]').forEach(a => {
 });
 if (CONFIG.INSTAGRAM) document.querySelectorAll('[data-instagram]').forEach(a => { a.href = 'https://instagram.com/' + CONFIG.INSTAGRAM; a.hidden = false; });
 
+// Portada: si falta la foto, se saca el bloque de imagen (sin manejador inline, por la CSP).
+const portadaImg = $('.portada img');
+if (portadaImg) portadaImg.onerror = () => portadaImg.parentNode.remove();
+
 renderPromo();
 renderCatalogo();
 $('#grilla-conjuntos').replaceChildren(...PRODUCTOS.filter(p => p.tipo === 'conjunto').map(tarjeta));

@@ -114,6 +114,17 @@ Una vez publicado, abrí `index.html` y reemplazá `USUARIO` en las tres líneas
 3. En el panel DNS del dominio agregá los registros que indica GitHub: cuatro registros `A` apuntando a `185.199.108.153`, `185.199.109.153`, `185.199.110.153` y `185.199.111.153`, y un `CNAME` de `www` a `dobleffnose-hash.github.io`.
 4. En **Settings > Pages** escribí el dominio en "Custom domain", esperá que verifique y activá **Enforce HTTPS**.
 
+## Seguridad
+
+Es un sitio estático: no hay servidor, base de datos, cuentas, formularios ni claves en el código. Lo que sí está cuidado:
+
+- **Secretos:** la única clave que existe (Gemini, para generar fotos) vive fuera del repo, en `~/.gemini_key` o en la variable `GEMINI_API_KEY`. Nunca la copies dentro de esta carpeta. `fotos-originales/` y `fotos-ia/` tampoco se suben.
+- **Content-Security-Policy** en cada página: solo scripts y estilos propios, fuentes de Google, sin conexiones a terceros. Si algún día agregás un script externo, hay que sumarlo a la `meta` CSP o no va a cargar.
+- **Entradas:** lo único que llega del usuario es el `#p=id` de la URL (se busca en un mapa; un id inexistente no hace nada) y los botones de talle. Todo se inserta como texto, nunca como HTML.
+- **Legales:** `legal.html` (términos, privacidad, marca, imágenes IA, defensa del consumidor). Es un borrador: revisalo con un profesional.
+
+Si más adelante sumás un backend (stock en vivo, pedidos, cuentas), el plan es: Supabase con **RLS activado en todas las tablas** y políticas por rol, claves solo en variables de entorno del servidor, validación de entradas con esquema (zod o similar), **rate limit** y Turnstile en cualquier endpoint público, y backups automáticos. Nada de eso hace falta mientras el sitio sea un catálogo con WhatsApp.
+
 ## Checklist antes de lanzar
 
 - [ ] `WHATSAPP` en `js/config.js` con el número real.

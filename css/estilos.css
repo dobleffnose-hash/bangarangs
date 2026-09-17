@@ -184,6 +184,7 @@ main > section > h2 { text-align: center; margin-bottom: 1.5rem; }
 .pie p { max-width: 62ch; margin-right: auto; }
 .pie-contacto { display: flex; gap: 2rem; }
 .pie-contacto a { color: var(--tinta); text-decoration: none; border-bottom: 1px solid var(--tinta); }
+.pie-legal a { color: var(--gris); }
 .pie-marca { color: var(--tinta); letter-spacing: .2em; text-transform: uppercase; font-size: .75rem; font-weight: 500; }
 
 .wa-flotante {
@@ -240,9 +241,18 @@ main > section > h2 { text-align: center; margin-bottom: 1.5rem; }
   .detalle-caja { grid-template-columns: 1fr 1fr; padding: 1.5rem 2.5rem 2.5rem; }
   .cerrar { position: absolute; right: 1rem; top: 1rem; }
   .galeria { position: sticky; top: 0; align-self: start; }
-  .portada img { aspect-ratio: 16 / 9; max-height: 82vh; }
+  .portada img { aspect-ratio: auto; height: auto; }
   .portada-texto { padding: 3.5rem var(--gutter) 4rem; }
 }
 @media (min-width: 1100px) {
   .grilla { grid-template-columns: repeat(4, 1fr); }
 }
+
+/* ---------- página legal ---------- */
+.legal { max-width: 720px; margin: 0 auto; padding: 3rem var(--gutter) 4rem; }
+.legal h1 { font-family: var(--display); font-style: italic; font-size: clamp(1.9rem, 5vw, 2.8rem); }
+.legal h2 { font-size: 1.1rem; font-weight: 500; margin-top: 2.25rem; }
+.legal p, .legal li { color: var(--gris); }
+.legal ul { padding-left: 1.2rem; }
+.legal-fecha { font-size: .85rem; }
+.legal-nota { border-top: 1px solid var(--linea); padding-top: 1rem; font-size: .85rem; }
