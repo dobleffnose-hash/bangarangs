@@ -3,9 +3,7 @@ Dentro de cada carpeta, fotos .webp de menos de 300 KB con estos nombres:
 
   ia-1.webp          modelo generada con IA, frente
   ia-2.webp          modelo generada con IA, de espaldas (es la que aparece al pasar el mouse)
-  real-frente.webp   foto real de la prenda
-  real-espalda.webp  foto real de la espalda
-  real-etiqueta.webp foto real de la etiqueta
+  prenda.webp        la prenda sola, tipo packshot (solo prendas, no conjuntos)
 
 Las carpetas de conjuntos y promo solo usan ia-1 e ia-2.
 Mientras falte una foto, el sitio muestra un cuadro del color de la prenda.

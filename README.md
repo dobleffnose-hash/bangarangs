@@ -58,17 +58,15 @@ Cada prenda tiene su carpeta en `img/productos/` con el mismo nombre que su `id`
 |---|---|
 | `ia-1.webp` | Modelo generada con IA, de frente (es la foto principal) |
 | `ia-2.webp` | Modelo generada con IA, de espaldas (aparece al pasar el mouse por la tarjeta) |
-| `real-frente.webp` | Foto real de la prenda |
-| `real-espalda.webp` | Foto real de la espalda |
-| `real-etiqueta.webp` | Foto real de la etiqueta |
+| `prenda.webp` | La prenda sola, tipo packshot sobre fondo claro (solo las prendas, no los conjuntos) |
 
 Los conjuntos y la promo solo usan `ia-1` e `ia-2`. Mientras falte alguna foto, el sitio muestra un cuadro del color de la prenda con su nombre: no hay que hacer nada, cuando copiás el archivo aparece.
 
-Si una prenda va a tener menos fotos (por ejemplo, solo una real), agregale a su entrada en `productos.js` la lista exacta:
+Si una prenda va a tener otras rutas de fotos, agregale a su entrada en `productos.js`:
 
 ```js
 "fotos_ia": ["img/productos/musc-lila/ia-1.webp"],
-"fotos_reales": ["img/productos/musc-lila/real-frente.webp"],
+"foto_prenda": "img/productos/musc-lila/otra.webp",
 ```
 
 ### Convertir fotos a .webp

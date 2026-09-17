@@ -38,7 +38,7 @@ const agotado = (p, opcion) => TALLES.every(t => stock(p, t, opcion) === 0);
 const ultimas = (p, opcion) => TALLES.some(t => { const s = stock(p, t, opcion); return s > 0 && s <= 3; });
 
 const fotosIA = p => p.fotos_ia || [1, 2].map(n => `img/productos/${p.id}/ia-${n}.webp`);
-const fotosReales = p => p.fotos_reales || ['frente', 'espalda', 'etiqueta'].map(n => `img/productos/${p.id}/real-${n}.webp`);
+const fotoPrenda = p => p.foto_prenda || `img/productos/${p.id}/prenda.webp`;
 
 function mensajeWA(p, talle, opcion) {
   const nombre = p.tipo === 'promo' ? `${porId[opcion].nombre} + bolero verde de regalo` : p.nombre;
@@ -66,7 +66,7 @@ function conMarcador(img, p) {
 const imagen = (src, alt, p, attrs = {}) => conMarcador(el('img', { src, alt, loading: 'lazy', width: 600, height: 800, ...attrs }), p);
 
 const altIA = p => `${p.nombre} puesta en modelo, imagen ilustrativa generada con IA`;
-const altReal = (p, i) => `${p.nombre}, foto real: ${['frente', 'espalda', 'etiqueta'][i]}`;
+const altPrenda = p => `${p.nombre}, la prenda sola`;
 
 /* ---------- piezas de interfaz ---------- */
 
@@ -206,8 +206,8 @@ function abrirDetalle(id, desde, opcionElegida) {
 
   // galería
   const fotos = [
-    ...fotosIA(p).map(src => ({ src, alt: altIA(p), tipo: 'Con modelo (IA)' })),
-    ...(p.stock ? fotosReales(p).map((src, i) => ({ src, alt: altReal(p, i), tipo: 'Foto real' })) : []),
+    ...fotosIA(p).map(src => ({ src, alt: altIA(p), tipo: 'Con modelo' })),
+    ...partes(p, opcion).map(pid => porId[pid]).map(x => ({ src: fotoPrenda(x), alt: altPrenda(x), tipo: 'La prenda' })),
   ];
   const principal = imagen(fotos[0].src, fotos[0].alt, p, { loading: 'eager' });
   const pieFoto = el('p', { class: 'galeria-pie', 'aria-live': 'polite' }, fotos[0].tipo);
@@ -295,7 +295,7 @@ document.head.append(el('script', { type: 'application/ld+json' }, JSON.stringif
     ...(CONFIG.INSTAGRAM && { sameAs: ['https://instagram.com/' + CONFIG.INSTAGRAM] }) },
   ...PRODUCTOS.filter(p => p.stock).map(p => ({
     '@context': 'https://schema.org', '@type': 'Product', name: p.nombre, description: p.descripcion, sku: p.id,
-    brand: { '@type': 'Brand', name: 'Twinset Milano' }, image: new URL(fotosReales(p)[0], base).href,
+    brand: { '@type': 'Brand', name: 'Twinset Milano' }, image: new URL(fotoPrenda(p), base).href,
     offers: { '@type': 'Offer', url: base + '#p=' + p.id, priceCurrency: 'ARS', price: p.precio,
       itemCondition: 'https://schema.org/NewCondition', availability: 'https://schema.org/' + (agotado(p) ? 'OutOfStock' : 'InStock') },
   })),
