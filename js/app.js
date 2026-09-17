@@ -40,8 +40,11 @@ const ultimas = (p, opcion) => TALLES.some(t => { const s = stock(p, t, opcion);
 const fotosIA = p => p.fotos_ia || [1, 2].map(n => `img/productos/${p.id}/ia-${n}.webp`);
 const fotoPrenda = p => p.foto_prenda || `img/productos/${p.id}/prenda.webp`;
 
+// Conjunto que tiene las mismas prendas que la promo con la musculosa elegida (para usar su foto y su precio regular).
+const conjuntoDePromo = (p, opcion) => PRODUCTOS.find(x => x.tipo === 'conjunto' && x.prendas.includes(opcion) && p.prendas.every(id => x.prendas.includes(id)));
+
 function mensajeWA(p, talle, opcion) {
-  const nombre = p.tipo === 'promo' ? `${porId[opcion].nombre} + bolero verde de regalo` : p.nombre;
+  const nombre = p.tipo === 'promo' ? `${porId[opcion].nombre} + bolero verde` : p.nombre;
   if (p.stock) return `Hola! Me interesa la ${nombre} en talle ${talle} (${precio(p.precio)}). ¿Está disponible?`;
   return `Hola! Me interesa ${p.tipo === 'promo' ? 'la promo' : 'el conjunto'} ${nombre} en talle ${talle} (${precio(p.precio)}).`;
 }
@@ -174,8 +177,9 @@ function renderPromo() {
       onclick: () => { promoOpcion = id; renderPromo(); $(`.opciones [aria-pressed="true"]`, sec).focus(); },
     }, porId[id].nombre.replace('Musculosa tejida ', ''))));
 
+  const conj = conjuntoDePromo(p, promoOpcion);
   const texto = el('div', { class: 'promo-texto' },
-    el('p', { class: 'sello' }, precio(p.precio)),
+    el('p', { class: 'sello' }, conj ? el('s', {}, precio(conj.precio)) : null, ' ', precio(p.precio)),
     el('h2', { id: 'promo-titulo' }, p.nombre),
     el('p', {}, p.descripcion),
     CONFIG.DESCUENTO_TRANSFERENCIA > 0 ? el('p', { class: 'transf' }, `${precio(precioTransf(p.precio))} con transferencia`) : null,
@@ -187,7 +191,7 @@ function renderPromo() {
   else texto.append(botonWA(p, sec, 'Quiero la promo por WhatsApp'));
 
   sec.replaceChildren(
-    el('div', { class: 'promo-foto' }, imagen(fotosIA(p)[0], altIA(p), p, { loading: 'eager' })),
+    el('div', { class: 'promo-foto' }, imagen(fotosIA(conj || p)[0], altIA(p), p, { loading: 'eager' })),
     texto,
   );
 }
@@ -206,7 +210,7 @@ function abrirDetalle(id, desde, opcionElegida) {
 
   // galería
   const fotos = [
-    ...fotosIA(p).map(src => ({ src, alt: altIA(p), tipo: 'Con modelo' })),
+    ...fotosIA(p.tipo === 'promo' ? (conjuntoDePromo(p, opcion) || p) : p).map(src => ({ src, alt: altIA(p), tipo: 'Con modelo' })),
     ...partes(p, opcion).map(pid => porId[pid]).map(x => ({ src: fotoPrenda(x), alt: altPrenda(x), tipo: 'La prenda' })),
   ];
   const principal = imagen(fotos[0].src, fotos[0].alt, p, { loading: 'eager' });

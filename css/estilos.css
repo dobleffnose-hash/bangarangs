@@ -257,3 +257,4 @@ main > section > h2 { text-align: center; margin-bottom: 1.5rem; }
 .legal-fecha { font-size: .85rem; }
 .legal-nota { border-top: 1px solid var(--linea); padding-top: 1rem; font-size: .85rem; }
 .sprite { position: absolute; width: 0; height: 0; }
+.sello s { color: var(--gris-2); font-size: .6em; margin-right: .3em; }

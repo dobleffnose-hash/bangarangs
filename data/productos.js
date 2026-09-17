@@ -101,10 +101,10 @@ const PRODUCTOS = [
   // y el bolero va siempre en el talle indicado en "talle_fijo".
   {
     "id": "promo-verde",
-    "nombre": "Musculosa verde + bolero verde de regalo",
+    "nombre": "Promo: musculosa verde + bolero verde",
     "tipo": "promo",
     "color": "#5C6E3C",
-    "descripcion": "Elegís la musculosa (Terracota u Oliva y Lima) en tu talle y te llevás el bolero corto verde talle M de regalo.",
+    "descripcion": "Elegís la musculosa (Terracota u Oliva y Lima) en tu talle y te llevás el bolero corto verde en talle M. El conjunto queda a precio promocional; solo con el bolero en M.",
     "precio": 45000,
     "opciones": ["musc-terracota", "musc-lima"],
     "prendas": ["bolero-verde"],
