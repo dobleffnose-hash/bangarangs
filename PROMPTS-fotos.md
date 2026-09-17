@@ -40,8 +40,7 @@ Siempre la misma modelo, el mismo fondo y la misma luz en todas: eso es lo que h
 | Archivo | Agregar al final |
 |---|---|
 | `ia-1.webp` | Plano de cuerpo entero hasta las rodillas, de frente, pose relajada, brazos sueltos, mirando a cámara. Formato vertical 3:4. |
-| `ia-2.webp` | Plano de cuerpo entero hasta las rodillas, de tres cuartos de perfil, una mano en el bolsillo del jean, mirando a cámara. Formato vertical 3:4. |
-| `ia-3.webp` | Plano cerrado del torso, del cuello a la cadera, para ver la textura del tejido y las franjas. Formato vertical 3:4. |
+| `ia-2.webp` | La misma modelo de espaldas a la cámara, cuerpo entero hasta las rodillas, pose relajada, cabeza apenas girada. Formato vertical 3:4. |
 | `portada.webp` | Plano horizontal amplio, formato 16:9, la modelo parada en el tercio derecho de la imagen, cuerpo entero, con espacio vacío del fondo a la izquierda para poner texto. Lleva el conjunto Musculosa Terracota + Bolero Verde abierto. |
 
 ## Fotos reales limpias (`real-frente`, `real-espalda`, `real-etiqueta`)

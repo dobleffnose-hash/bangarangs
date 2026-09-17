@@ -37,7 +37,7 @@ function stock(p, talle, opcion) {
 const agotado = (p, opcion) => TALLES.every(t => stock(p, t, opcion) === 0);
 const ultimas = (p, opcion) => TALLES.some(t => { const s = stock(p, t, opcion); return s > 0 && s <= 3; });
 
-const fotosIA = p => p.fotos_ia || [1, 2, 3].map(n => `img/productos/${p.id}/ia-${n}.webp`);
+const fotosIA = p => p.fotos_ia || [1, 2].map(n => `img/productos/${p.id}/ia-${n}.webp`);
 const fotosReales = p => p.fotos_reales || ['frente', 'espalda', 'etiqueta'].map(n => `img/productos/${p.id}/real-${n}.webp`);
 
 function mensajeWA(p, talle, opcion) {

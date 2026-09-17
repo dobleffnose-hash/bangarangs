@@ -2,12 +2,11 @@ Una carpeta por prenda, con el id que figura en data/productos.js.
 Dentro de cada carpeta, fotos .webp de menos de 300 KB con estos nombres:
 
   ia-1.webp          modelo generada con IA, frente
-  ia-2.webp          modelo generada con IA, costado (es la que aparece al pasar el mouse)
-  ia-3.webp          modelo generada con IA, detalle del tejido
+  ia-2.webp          modelo generada con IA, de espaldas (es la que aparece al pasar el mouse)
   real-frente.webp   foto real de la prenda
   real-espalda.webp  foto real de la espalda
   real-etiqueta.webp foto real de la etiqueta
 
-Las carpetas de conjuntos y promo solo usan ia-1, ia-2 e ia-3.
+Las carpetas de conjuntos y promo solo usan ia-1 e ia-2.
 Mientras falte una foto, el sitio muestra un cuadro del color de la prenda.
 Para convertir a .webp: ver "Fotos" en el README.
