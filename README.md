@@ -108,7 +108,7 @@ y entrá a `http://localhost:8000`.
 1. Creá un repositorio público en GitHub, por ejemplo `bangarangs`.
 2. Subí todos los archivos a la rama `main` (con GitHub Desktop o desde la web con "Add file > Upload files").
 3. En el repositorio, andá a **Settings > Pages**. En "Build and deployment" elegí **Deploy from a branch**, rama `main`, carpeta `/ (root)`. Guardá.
-4. En uno o dos minutos el sitio queda en `https://capeletony.github.io/bangarangs/`.
+4. En uno o dos minutos el sitio queda en `https://dobleffnose-hash.github.io/bangarangs/`.
 
 Cada vez que subís un cambio a `main`, el sitio se actualiza solo en un minuto.
 
@@ -118,7 +118,7 @@ Una vez publicado, abrí `index.html` y reemplazá `USUARIO` en las tres líneas
 
 1. Registrá un `.com.ar` en [nic.ar](https://nic.ar).
 2. Creá en la raíz del repositorio un archivo llamado `CNAME` (sin extensión) con el dominio adentro, por ejemplo `bangarangs.com.ar`.
-3. En el panel DNS del dominio agregá los registros que indica GitHub: cuatro registros `A` apuntando a `185.199.108.153`, `185.199.109.153`, `185.199.110.153` y `185.199.111.153`, y un `CNAME` de `www` a `capeletony.github.io`.
+3. En el panel DNS del dominio agregá los registros que indica GitHub: cuatro registros `A` apuntando a `185.199.108.153`, `185.199.109.153`, `185.199.110.153` y `185.199.111.153`, y un `CNAME` de `www` a `dobleffnose-hash.github.io`.
 4. En **Settings > Pages** escribí el dominio en "Custom domain", esperá que verifique y activá **Enforce HTTPS**.
 
 ## Checklist antes de lanzar
