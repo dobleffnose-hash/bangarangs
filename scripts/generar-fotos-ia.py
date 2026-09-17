@@ -29,7 +29,8 @@ MUSC = ("The garment is a fitted fine-knit camisole top with thin adjustable {br
         "many thin alternating horizontal stripes in {rayas}. It ends at the hip.")
 BOLERO = ("The garment is a very short cropped cardigan (bolero) in fine ribbed knit, plain {color}, round neckline, "
           "long fitted sleeves, with a front placket of seven small round buttons in the same color. It ends right "
-          "below the bust. Underneath she wears a plain white fitted top.")
+          "below the bust.")
+TOP_BLANCO = " Underneath she wears a plain white fitted top."
 
 PRENDAS = {
     'musc-terracota': MUSC.format(bretel='dark olive', arriba='very dark olive green', franja='terracotta (burnt orange)',
@@ -38,8 +39,8 @@ PRENDAS = {
                              lineas='two thin dark lines', rayas='lime green and dark olive'),
     'musc-lila': MUSC.format(bretel='beige', arriba='light beige', franja='pastel lilac',
                              lineas='a single thin beige line through the middle', rayas='pale pastel green and beige'),
-    'bolero-verde': BOLERO.format(color='dark olive green'),
-    'bolero-beige': BOLERO.format(color='cream beige'),
+    'bolero-verde': BOLERO.format(color='dark olive green') + TOP_BLANCO,
+    'bolero-beige': BOLERO.format(color='cream beige') + TOP_BLANCO,
 }
 CONJUNTOS = {  # id: (musculosa, bolero)
     'conj-terracota-verde': ('musc-terracota', 'bolero-verde'),
@@ -88,9 +89,8 @@ def armar(pid, toma, modelo_ref):
         m, b = CONJUNTOS[pid]
         refs = [RAIZ / 'img/productos' / m / 'real-frente.webp', RAIZ / 'img/productos' / b / 'real-frente.webp']
         texto = (f'{BASE} She wears two garments from the reference images. First reference: {PRENDAS[m]} '
-                 f'Second reference: {BOLERO.format(color=PRENDAS[b].split("plain ")[1].split(",")[0])} '
-                 f'The bolero is worn OPEN, unbuttoned, over the camisole, so the camisole\'s band and stripes stay visible. '
-                 f'No white top underneath. {detalle}')
+                 f'Second reference: {PRENDAS[b].replace(TOP_BLANCO, "")} '
+                 f'The bolero is worn OPEN, unbuttoned, over the camisole, so the camisole\'s band and stripes stay visible. {detalle}')
     if modelo_ref:
         refs.append(Path(modelo_ref))
         texto += ' The last reference image shows the model, background and lighting: use the SAME woman, same hair, same jeans, same background and same light.'
