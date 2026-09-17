@@ -1,4 +1,4 @@
-# Archivio · catálogo
+# Bangarangs · catálogo
 
 Sitio estático de catálogo para vender prendas Twinset Milano de archivo. Sin carrito ni pagos: cada prenda abre WhatsApp con el mensaje armado.
 
@@ -38,8 +38,8 @@ El precio con transferencia se calcula solo a partir de `DESCUENTO_TRANSFERENCIA
 Todo en `js/config.js`:
 
 ```js
-NOMBRE_TIENDA: 'Archivio',
-WHATSAPP: '5491100000000',   // código de país + área + número, sin + ni espacios ni el 15
+NOMBRE_TIENDA: 'Bangarangs',
+WHATSAPP: '5491125458525',   // código de país + área + número, sin + ni espacios ni el 15
 INSTAGRAM: '',               // usuario sin @; vacío oculta el link
 DESCUENTO_TRANSFERENCIA: 0.10,
 ```
@@ -105,10 +105,10 @@ y entrá a `http://localhost:8000`.
 
 ## Publicar en GitHub Pages
 
-1. Creá un repositorio público en GitHub, por ejemplo `archivio`.
+1. Creá un repositorio público en GitHub, por ejemplo `bangarangs`.
 2. Subí todos los archivos a la rama `main` (con GitHub Desktop o desde la web con "Add file > Upload files").
 3. En el repositorio, andá a **Settings > Pages**. En "Build and deployment" elegí **Deploy from a branch**, rama `main`, carpeta `/ (root)`. Guardá.
-4. En uno o dos minutos el sitio queda en `https://USUARIO.github.io/archivio/`.
+4. En uno o dos minutos el sitio queda en `https://USUARIO.github.io/bangarangs/`.
 
 Cada vez que subís un cambio a `main`, el sitio se actualiza solo en un minuto.
 
@@ -117,7 +117,7 @@ Una vez publicado, abrí `index.html` y reemplazá `USUARIO` en las tres líneas
 ### Dominio propio (opcional)
 
 1. Registrá un `.com.ar` en [nic.ar](https://nic.ar).
-2. Creá en la raíz del repositorio un archivo llamado `CNAME` (sin extensión) con el dominio adentro, por ejemplo `archivio.com.ar`.
+2. Creá en la raíz del repositorio un archivo llamado `CNAME` (sin extensión) con el dominio adentro, por ejemplo `bangarangs.com.ar`.
 3. En el panel DNS del dominio agregá los registros que indica GitHub: cuatro registros `A` apuntando a `185.199.108.153`, `185.199.109.153`, `185.199.110.153` y `185.199.111.153`, y un `CNAME` de `www` a `USUARIO.github.io`.
 4. En **Settings > Pages** escribí el dominio en "Custom domain", esperá que verifique y activá **Enforce HTTPS**.
 

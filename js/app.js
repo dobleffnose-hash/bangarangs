@@ -1,4 +1,4 @@
-/* Archivio · catálogo. Lee CONFIG (js/config.js) y PRODUCTOS (data/productos.js). */
+/* Bangarangs · catálogo. Lee CONFIG (js/config.js) y PRODUCTOS (data/productos.js). */
 'use strict';
 
 const TALLES = ['S', 'M', 'L'];
@@ -265,7 +265,7 @@ dialogo.addEventListener('close', () => {
 
 /* ---------- arranque ---------- */
 
-document.title = document.title.replace('Archivio', CONFIG.NOMBRE_TIENDA);
+document.title = document.title.replace('Bangarangs', CONFIG.NOMBRE_TIENDA);
 document.querySelectorAll('[data-tienda]').forEach(n => n.textContent = CONFIG.NOMBRE_TIENDA);
 document.querySelectorAll('[data-wa-generico]').forEach(a => a.href = wa('Hola! Tengo una consulta sobre las prendas Twinset.'));
 if (CONFIG.INSTAGRAM) document.querySelectorAll('[data-instagram]').forEach(a => { a.href = 'https://instagram.com/' + CONFIG.INSTAGRAM; a.hidden = false; });
